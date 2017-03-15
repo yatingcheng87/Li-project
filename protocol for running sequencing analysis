@@ -30,4 +30,6 @@ main-scripts/map.sh lists/pten 2> err.log | tee out.log
 main-scripts/summary.py lists/pten keys/pten.csv #  you need to create key file before running the summary.py
 
 # differential analysis will be carried out in the R interface (use edger-yating.R), for convenience, you can transfer the analysis folder, list file, key file to your local computer for running R.
+
+
  
