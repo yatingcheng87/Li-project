@@ -1,8 +1,9 @@
-Please check the link for detailed protocol for general analysis procedure 
+####Please check the link for detailed protocol for general analysis procedure #####
 
 https://github.com/chapkinlab/sequencing-pipeline/tree/master/docs
 
-Specific procedure running for sequencing data from Dr. Li
+#### Specific procedure running for sequencing data from Dr. Li######
+
 #  raw data downloaded from the website: https://download.txgen.tamu.edu/qinglei.li/160517_D00572_0193_AC8KJKANXX_15375Li/
     
 wget https://download.txgen.tamu.edu/qinglei.li/160517_D00572_0193_AC8KJKANXX_15375Li/001/fastq_15375Li_N16029_L001.tar
