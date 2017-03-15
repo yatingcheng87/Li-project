@@ -1,0 +1,12 @@
+species="grcm38-mouse"
+samplelist=(\
+/home/cyating/15375Li_N16029/s1.fastq.bz2 \
+/home/cyating/15375Li_N16029/s2.fastq.bz2 \
+/home/cyating/15375Li_N16029/s3.fastq.bz2 \
+/home/cyating/15375Li_N16029/s4.fastq.bz2 \
+/home/cyating/15375Li_N16029/s5.fastq.bz2 \
+/home/cyating/15375Li_N16029/s6.fastq.bz2 \
+/home/cyating/15375Li_N16029/s7.fastq.bz2 \
+/home/cyating/15375Li_N16029/s8.fastq.bz2 \
+)
+
