@@ -26,7 +26,7 @@ ls ~/15375Li_N16029/*.bz2 > listname.txt  # the listname.txt can be used for lis
 #### map reads to the genome
 main-scripts/map.sh lists/pten 2> err.log | tee out.log
 
-#analysis summarization
+####analysis summarization
 main-scripts/summary.py lists/pten keys/pten.csv #  you need to create key file before running the summary.py
 
 #### differential analysis will be carried out in the R interface (use edger-yating.R), for convenience, you can transfer the analysis folder, list file, key file to your local computer for running R.
