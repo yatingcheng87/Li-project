@@ -9,7 +9,7 @@
 #names=dat1[,1]
 #rownames(dat1)=make.names(names,unique=TRUE)
 #dat <- dat1[,-1] #this deletes the first column 
----------------------------------------------------------------------------------------------------------
+############################################################################################################
 ### or you can download the analysis file, the list file, key file from the pipeline and use 
 ###  the original script in the pipeline 
   
@@ -19,12 +19,12 @@ args = c("pten","pten.csv")
 bname = basename(args[1]) 
 fname = paste(bname,"-count.T.csv",sep='')
 dat = read.csv(file.path("analysis",bname,fname), header = TRUE, row.names=1)
----------------------------------------------------------------------------------------------------------
+############################################################################################################
 
 #### filter the data ###
 keep = rowSums(cpm(dat) > 3) >= 3
 counts = dat[keep,]
----------------------------------------------------------------------------------------------------------
+############################################################################################################
 ##this line was written in order to remove ERCCs and mitochondria under the assumption that
 ##their names start with ERCC and MT, respectively. However, you can easily check out that 
 ##this code removes other genes as well. Also, if you want to keep everything, you should 
@@ -33,10 +33,10 @@ counts = dat[keep,]
 #sel = grepl("MT-.*", rownames(counts)) + grepl("ERCC-.*", rownames(counts)) + grepl("mt-.*", rownames(counts))
 
 #counts = counts[!sel,]
----------------------------------------------------------------------------------------------------------
+############################################################################################################
 
 head(counts)
----------------------------------------------------------------------------------------------------------
+############################################################################################################
 ### there are different ways to make group for the files. 
 
 #first method, manual typed in the matched group.
@@ -52,7 +52,7 @@ groups <- factors
 # factors <- metadata$treatment
 # groups <- factors
 
----------------------------------------------------------------------------------------------------------
+############################################################################################################
 
 ### edgeR script, you can check the manual of edgeR for more detailed algorithm
 
