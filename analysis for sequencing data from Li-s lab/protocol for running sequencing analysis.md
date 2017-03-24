@@ -34,7 +34,8 @@ main-scripts/summary.py lists/pten keys/pten.csv #  you need to create key file 
 Problem with the current R script
 "It looks like two or more levels of classification are needed to run the differential expression script. It seems to work if I add one more test column to your key file. Thanks for finding this. If you're interested, use this key file and add "test" to the factors and design commands, and try. It should work. I'll talk to Jason and fix this. " - from Kumaran. 
 
-Therefore, if you only have one level of classification, you have to add an additional artificial one. In addition, you can read the output results when using the R script in the R console. It is easier for you to catch up error and understand each step. 
+Therefore, if you only have one level of classification, you have to add an additional artificial one. This step might be confusing. 
+In addition, you can read the output results when using the R script in the R console. It is easier for you to catch up error and understand each step. 
 
 There are different ways that you can utilize the result you get from the pipeline  in the R. For the detail, please check the detailed comment in the R script. exact-test-for Li-3-23-2017.R 
 (https://www.bioconductor.org/packages/devel/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf  The edgeR manual will be good sourse to get help. )
