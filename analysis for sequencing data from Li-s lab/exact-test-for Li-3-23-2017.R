@@ -19,34 +19,40 @@ args = c("pten","pten.csv")
 bname = basename(args[1]) 
 fname = paste(bname,"-count.T.csv",sep='')
 dat = read.csv(file.path("analysis",bname,fname), header = TRUE, row.names=1)
+---------------------------------------------------------------------------------------------------------
 
 #### filter the data ###
 keep = rowSums(cpm(dat) > 3) >= 3
 counts = dat[keep,]
-
-#### the following two commonds are used to remove ERCC count and mitochondrial count
-### use with caution, since it might remove your interested genes
-### for instance, the mt- genes might not be mitochodrial genes. 
+---------------------------------------------------------------------------------------------------------
+##this line was written in order to remove ERCCs and mitochondria under the assumption that
+##their names start with ERCC and MT, respectively. However, you can easily check out that 
+##this code removes other genes as well. Also, if you want to keep everything, you should 
+##change this line accordingly or delete the part. (from Eunji)
 
 #sel = grepl("MT-.*", rownames(counts)) + grepl("ERCC-.*", rownames(counts)) + grepl("mt-.*", rownames(counts))
 
 #counts = counts[!sel,]
-
+---------------------------------------------------------------------------------------------------------
 
 head(counts)
+---------------------------------------------------------------------------------------------------------
+### there are different ways to make group for the files. 
 
-# there are different ways to make group for the files. 
-#first method
+#first method, manual typed in the matched group.
 
 factors <- c("dko", "sko", "sko", "sko", "dko", "dko","dko" ,"sko") # the order should match to the order of sample names
 #in the count csv file. 
-
 groups <- factors
+
 # second method, generate the group file, group.csv. Be sure the order of sample list 
 #is the same as in the count csv file
-#metadata = read.csv("group.csv", header=TRUE, row.names=1)
-#factors <- metadata$treatment
-#groups <- factors
+
+# metadata = read.csv("group.csv", header=TRUE, row.names=1)
+# factors <- metadata$treatment
+# groups <- factors
+
+---------------------------------------------------------------------------------------------------------
 
 ### edgeR script, you can check the manual of edgeR for more detailed algorithm
 
@@ -58,6 +64,7 @@ y = estimateTagwiseDisp(y)
 
 
 ## normalized count calculation
+
 scaled.counts=round(t(t(counts)/f)*mean(f))
 rownames(scaled.counts) = rownames(counts)
 dfs = split.data.frame(t(scaled.counts), groups)
