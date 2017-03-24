@@ -52,7 +52,11 @@ Since there are only two groups for comparision, we used the exact T test, if yo
 
 
 
-If you don't have the package in your local computer. you
+If you don't have the edgeR package in your local computer. you need to download the edgeR package
+
+source("https://bioconductor.org/biocLite.R")
+biocLite("edgeR")
+library(edgeR)
 
 
  
