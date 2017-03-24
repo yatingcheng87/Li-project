@@ -1,5 +1,5 @@
 
-###input count data and group annoation in to the R. There are many other ways to import 
+###input count data and group annoation in to the R. There are different ways to import 
 ###data. In this script, we tried to use the most of command from the original script in the 
 ###pipeline
 
