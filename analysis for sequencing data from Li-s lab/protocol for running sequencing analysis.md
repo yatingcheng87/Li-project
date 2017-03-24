@@ -31,15 +31,15 @@ main-scripts/summary.py lists/pten keys/pten.csv #  you need to create key file 
 
 #### differential analysis will be carried out in the R interface (use edger-yating.R), for convenience, you can transfer the analysis folder, list file, key file to your local computer for running R.
 
-### Problem with the current R script
+##### Problem with the current R script
 # "It looks like two or more levels of classification are needed to run the differential expression script. It seems to work if I add one more test column to your key file. Thanks for finding this. If you're interested, use this key file and add "test" to the factors and design commands, and try. It should work. I'll talk to Jason and fix this. " - from Kumaran. 
 
-# "the line staring with scaled.counts in your code is supposed to save the normalized counts. However, the equation for obtaining the normalized counts turned out to be wrong and the line should be changed as follows:
+##### "the line staring with scaled.counts in your code is supposed to save the normalized counts. However, the equation for obtaining the normalized counts turned out to be wrong and the line should be changed as follows:
 y=calcNormFactors(y)
 f=y$samples$lib.size * y$samples$norm.factors/mean(y$samples$lib.size*y$samples$norm.factors)
 scaled.counts=round(t(t(counts)/f)*mean(f))" - from Eunji
 
-# "sel = grepl("MT-.*", rownames(counts)) + grepl("ERCC-.*", rownames(counts)) + grepl("mt-.*", rownames(counts))
+##### "sel = grepl("MT-.*", rownames(counts)) + grepl("ERCC-.*", rownames(counts)) + grepl("mt-.*", rownames(counts))
 Originally, this line was written in order to remove ERCCs and mitochondria under the assumption that their names start with ERCC and MT, respectively. However, you can easily check out that this code removes other genes as well. Also, if you want to keep everything, you should change this line accordingly or delete the part." - from Eunji
 
 Therefore, if you only have one level of classification, you have to add an additional artificial one. This step might be confusing. 
