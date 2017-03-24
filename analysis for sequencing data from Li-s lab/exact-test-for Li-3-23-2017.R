@@ -1,14 +1,14 @@
 
-###input count data and group annoation in to the R. There are many other ways to import 
-###data. In this script, we tried to use the most of command from the original script in the 
-###pipeline
+### input count data and group annoation in to the R. There are many other ways to import 
+### data. In this script, we tried to use the most of command from the original script in the 
+### pipeline
 
 ## for instance, you can just use the pten-count.T.csv alone to extract count data##
 
-#dat1 = read.csv(file = "pten-count.T.csv", header = TRUE)
-#names=dat1[,1]
-#rownames(dat1)=make.names(names,unique=TRUE)
-#dat <- dat1[,-1] #this deletes the first column 
+# dat1 = read.csv(file = "pten-count.T.csv", header = TRUE)
+# names=dat1[,1]
+# rownames(dat1)=make.names(names,unique=TRUE)
+# dat <- dat1[,-1] #this deletes the first column 
 ---------------------------------------------------------------------------------------------------------
 ### or you can download the analysis file, the list file, key file from the pipeline and use 
 ###  the original script in the pipeline 
